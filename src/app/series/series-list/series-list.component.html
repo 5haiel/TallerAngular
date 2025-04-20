@@ -1,0 +1,58 @@
+<div class="container-fluid">
+  <header class="container-fluid header-bg">
+    <h1 class="header-title">TV Series</h1>
+  </header>
+  <main class="container-fluid">
+    <h1 class="main-title text-center">Welcome!</h1>
+    <section id="series-table">
+      <div class="row">
+        <!-- Table for series list -->
+        <div class="col-lg-5 col-md-5 col-12">
+          <table class="table table-hover table-style">
+            <thead>
+              <tr class="table-header-bg">
+                <th scope="col" class="table-header-custom">#</th>
+                <th scope="col" class="table-header-custom">Name</th>
+                <th scope="col" class="table-header-custom">Channel</th>
+                <th scope="col" class="table-header-custom">Seasons</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let serie of series; let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td class="clickable" style="cursor:pointer; color:blue;" (click)="selectSeries(serie)">{{ serie.name }}</td>
+                <td>{{ serie.channel }}</td>
+                <td>{{ serie.seasons }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="row justify-content-left">
+            <h5 class="col-4 col-md-4 col-lg-4 seasons-average-text text-center">Seasons average: </h5>
+            <h5 class="col-1 seasons-average-text">{{ getAverageSeasons(series) }}</h5>
+          </div>
+        </div>
+        <div class="col-lg-1 col-md-1"></div>
+        <div class="col-lg-5 col-md-5 col-12">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-12">
+              <div
+                id="series-details-card"
+                class="card series-card-text border-secondary"
+                style="width: 30rem;"
+                *ngIf="selectedSeries">
+                <img
+                  class="card-img-top"
+                  [src]="selectedSeries.image"
+                  [alt]="selectedSeries.name"/>
+                <div class="card-body">
+                  <h2 class="card-title">{{ selectedSeries.name }}</h2>
+                  <p class="card-text">{{ selectedSeries.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
