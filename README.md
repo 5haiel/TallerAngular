@@ -1,4 +1,9 @@
-# Mynewapp
+# TV Series #
+## Desarrollado por: ##
+### Shaiel Mateo Jimenez Posada ###
+### Código: 202323846 ###
+Nota: Las imagenes de las series no cargan debido a que los enlaces proporcionados en el link de los datos no funcionan, y debido a que cada imagen se obtiene dinámicamente de este, no es posible definir un origin específico para cada imagen como se hizo en el taller anterior.
+#
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.0.
 
